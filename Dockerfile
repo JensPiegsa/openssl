@@ -4,8 +4,9 @@ MAINTAINER Jens Piegsa <piegsa@gmail.com>
 
 ENV        DAYS 3650
 
-RUN        apk add --no-cache openssl
-
 COPY       entry.sh /entry.sh
+
+RUN        apk add --no-cache openssl && \
+           chmod +x entry.sh
 
 ENTRYPOINT ["/entry.sh"]
