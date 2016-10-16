@@ -1,4 +1,6 @@
 #!/bin/sh
+
+set -e
 trap 'exit' ERR
 
 openssl genrsa -out /certs/${KEY_NAME}.key 4096
