@@ -6,6 +6,6 @@ ENV        DAYS 3650
 
 RUN        apk add --no-cache openssl
 
-ADD        entry.sh /
+COPY       entry.sh /entry.sh
 
-ENTRYPOINT /entry.sh
+ENTRYPOINT ["/entry.sh"]
