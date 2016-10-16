@@ -18,12 +18,12 @@ fi
 
 if [ -z "${CA_NAME}" ]; then
     openssl x509 -req -days ${DAYS} -set_serial 01 \
-     -signkey ${KEY_NAME}.key \
+     -signkey /certs/${KEY_NAME}.key \
      -in /certs/${KEY_NAME}.csr \
      -out /certs/${KEY_NAME}.pem
 else
     openssl x509 -req -days ${DAYS} -set_serial 01 \
-     -CA ${CA_NAME}.pem -CAkey ${CA_NAME}.key \
+     -CA /certs/${CA_NAME}.pem -CAkey /certs/${CA_NAME}.key \
      -in /certs/${KEY_NAME}.csr \
      -out /certs/${KEY_NAME}.pem
 fi
